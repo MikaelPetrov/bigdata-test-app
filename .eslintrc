@@ -1,0 +1,53 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "warn"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "amd": true,
+    "node": true
+  },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+        ],
+        "@typescript-eslint/no-use-before-define": [
+          "error",
+          {
+            "functions": false,
+            "classes": true,
+            "variables": true,
+            "typedefs": true
+          }
+        ]
+      }
+    }
+  ]
+}
