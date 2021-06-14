@@ -1,7 +1,7 @@
-import { HomeContainer } from './style';
+import { HomeWrapper } from './style';
 
 const Home: React.FC = () => {
-  return <HomeContainer data-name="home-container">Home</HomeContainer>;
+  return <HomeWrapper data-name="home-wrapper">Home</HomeWrapper>;
 };
 
 export default Home;
