@@ -7,7 +7,7 @@ import {
 export function toListMovies(response: TypeListMovies): TypeListMovies {
   return {
     movie_count: response.movie_count,
-    movies: response.movies.map((movie: TypeMovies) => ({
+    movies: response.movies?.map((movie: TypeMovies) => ({
       background_image: movie.background_image,
       description_full: movie.description_full,
       genres: movie.genres,
@@ -18,7 +18,7 @@ export function toListMovies(response: TypeListMovies): TypeListMovies {
       runtime: movie.runtime,
       slug: movie.slug,
       title_long: movie.title_long,
-      torrents: movie.torrents.map((torrent: TypeTorrents) => ({
+      torrents: movie.torrents?.map((torrent: TypeTorrents) => ({
         quality: torrent.quality,
         url: torrent.url,
       })),

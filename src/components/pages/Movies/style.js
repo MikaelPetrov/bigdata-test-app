@@ -19,7 +19,7 @@ export const MoviesList = styled.div`
   justify-content: center;
 `;
 
-export const MovieItem = styled.div`
+export const MoviesItem = styled.div`
   max-width: 150px;
   margin: 10px;
   line-height: 1.2;

@@ -65,7 +65,7 @@ const Movie: React.FC<Props> = (props) => {
       <MovieInfo data-name="movie-info">
         <Img src={props.info.medium_cover_image} />
         <div>
-          <>Available in:</>
+          <>Available in: </>
           {props.info.torrents.map((torrent) => (
             <div key={torrent.quality}>
               <a
@@ -83,15 +83,14 @@ const Movie: React.FC<Props> = (props) => {
       </MovieInfo>
       <MovieTitle data-name="movie-title">
         <>{props.info.title_long}</>
-        <MovieGenres data-name="movie-genre">
+        <MovieGenres data-name="movie-genres">
           {props.info.genres.map((genre) => (
-            <MovieGenre key={genre} data-name="movie-genres">
+            <MovieGenre key={genre} data-name="movie-genre">
               {genre}
             </MovieGenre>
           ))}
         </MovieGenres>
       </MovieTitle>
-      <MovieGenres data-name="movie-genre"></MovieGenres>
       <MovieDescription data-name="movie-description">
         {props.info.description_full}
       </MovieDescription>
@@ -110,7 +109,7 @@ const Movie: React.FC<Props> = (props) => {
       </Form>
       {props.comments.map((comment) => (
         <MovieCommentary key={comment.id} data-name="movies-commentary">
-          <div>{comment.texts}</div>
+          <>{comment.texts}</>
           <div
             onClick={() => deleteComment(comment.id)}
             style={{ cursor: 'pointer' }}
