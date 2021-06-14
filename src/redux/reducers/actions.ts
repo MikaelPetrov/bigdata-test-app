@@ -1,0 +1,1 @@
+export const SET_LIST_MOVIES = 'SET_LIST_MOVIES';

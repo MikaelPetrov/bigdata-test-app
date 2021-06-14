@@ -9,7 +9,7 @@ export type TypeMovies = {
   genres: string[];
   id: number;
   language: string;
-  large_cover_image: string;
+  medium_cover_image: string;
   rating: number;
   runtime: number;
   slug: string;
@@ -22,12 +22,4 @@ export type TypeMovies = {
 export type TypeListMovies = {
   movie_count: number;
   movies: TypeMovies[];
-};
-
-export type TypeUseGetListMovies = {
-  page: number;
-  limit: number;
-  listMovies: null | TypeListMovies;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
-  setLimit: React.Dispatch<React.SetStateAction<number>>;
 };
