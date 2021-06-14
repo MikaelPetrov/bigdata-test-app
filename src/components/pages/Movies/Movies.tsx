@@ -10,8 +10,8 @@ import { moviesLimit } from './constants';
 import { getRangePages } from './helper';
 import {
   activatedButton,
-  MovieItem,
   moviesImageStyles,
+  MoviesItem,
   MoviesLimiter,
   MoviesList,
   MoviesPagination,
@@ -37,19 +37,19 @@ const Movies: React.FC<Props> = (props) => {
   const pages: number[] = [];
   for (let i = 1; i <= pagesCount; i++) pages.push(i);
 
-  function handleChangeLimit(value: number): void {
-    history.push({
-      pathname: paths[Page.MOVIES],
-      search: `?page=${props.page}&limit=${value}`,
-    });
-  }
-
   function handleChangePage(page: number): void {
     getRangePages(page, pagesCount, setLeftPortion, setRightPortion);
 
     history.push({
       pathname: paths[Page.MOVIES],
       search: `?page=${page}&limit=${props.limit}`,
+    });
+  }
+
+  function handleChangeLimit(value: number): void {
+    history.push({
+      pathname: paths[Page.MOVIES],
+      search: `?page=${props.page}&limit=${value}`,
     });
   }
 
@@ -89,14 +89,14 @@ const Movies: React.FC<Props> = (props) => {
       </MoviesLimiter>
       <MoviesList data-name="movies-list">
         {props.listMovies.movies?.map((movie) => (
-          <MovieItem
+          <MoviesItem
             onClick={() => getMovieInfo(movie.id, movie)}
             key={movie.id}
-            data-name="movie-item"
+            data-name="movies-item"
           >
             <Img src={movie.medium_cover_image} {...moviesImageStyles} />
-            <span>{movie.title_long}</span>
-          </MovieItem>
+            <>{movie.title_long}</>
+          </MoviesItem>
         ))}
       </MoviesList>
       <MoviesPagination data-name="movies-pagination">

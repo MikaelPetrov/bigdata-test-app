@@ -42,7 +42,8 @@ export const MovieDescription = styled.div`
 `;
 
 export const MovieCommentary = styled.div`
-  width: 300px;
+  min-width: 355px;
+  max-width: 50%;
   margin: 10px 0;
   padding: 5px;
   display: flex;

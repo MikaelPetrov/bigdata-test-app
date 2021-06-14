@@ -20,7 +20,7 @@ const Button: React.FC<TypeButtonProps> = (props) => {
 
   return (
     <StyledButton data-name="styled-button" {...buttonStyleProps}>
-      <span>{props.children}</span>
+      <>{props.children}</>
     </StyledButton>
   );
 };
