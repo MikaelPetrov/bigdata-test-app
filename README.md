@@ -4,6 +4,6 @@ It's the test task from BIGDATA
 
 To start the project, you need to do the following:
 
-git clone https://github.com/MikaelPetrov/bigdata-test-app.git
-npm install
-npm start
+1) git clone https://github.com/MikaelPetrov/bigdata-test-app.git
+2) npm install
+3) npm start
